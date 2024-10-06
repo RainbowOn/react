@@ -4,6 +4,8 @@ import axios from 'axios';
 import logo from '../src/assets/logo.png';
 import { LoginPage } from './components/pages/LoginPage';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import HomePage from './components/pages/HomeContent'; 
+
 
 function HomePage() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -213,6 +215,8 @@ function HomePage() {
             {/* Sayfa İçeriği */}
             <main className="p-8 w-full max-w-min mx-auto">
                 <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/login" element={<LoginPage />} /> 
                     <Route path="/" element={<HomeContent
                         customers={customers}
                         isModalOpen={isModalOpen}
